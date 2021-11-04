@@ -2,43 +2,41 @@
 const catPic = document.getElementById('cat-pic');
 const dogPic = document.getElementById('dog-pic');
 const horsePic = document.getElementById('horse-pic');
-const meow = document.getElementById('meow');
-const woof = document.getElementById('woof');
-const neigh = document.getElementById('neigh');
+const cat = document.getElementById('meow');
+const dog = document.getElementById('woof');
+const horse = document.getElementById('neigh');
 
-const lastPlay = document.getElementById('last-sound')
+const lastPlay = document.getElementById('last-sound');
 
 
 // initialize global state
 
 catPic.addEventListener('click', () => {
-    meow.play();
-    lastPlay.textContent = 'You played the sound of a cat';
+    myFunc(cat, 'cat');
 });
 
 
 dogPic.addEventListener('click', () => {
-    woof.play();
-    lastPlay.textContent = 'You played the sound of a dog (Good Choice)';
+    myFunc(dog, 'dog');
 });
 
 
 horsePic.addEventListener('click', () => {
-    neigh.play();
-    lastPlay.textContent = 'You played the sound of a horse';
+    myFunc(horse, 'horse');
 });
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'c'){
-        meow.play();
-        lastPlay.textContent = 'You played the sound of a cat';
+        myFunc(cat, 'cat');
     } else if (e.key === 'd'){
-        woof.play();
-        lastPlay.textContent = 'You played the sound of a dog (Good Choice)';
-
+        myFunc(dog, 'dog');
     } else if (e.key === 'h'){
-        neigh.play();
-        lastPlay.textContent = 'You played the sound of a horse';
-
+        myFunc(horse, 'horse');
     }
 });
+
+
+const myFunc = (animal, typeAnimal) => {
+    animal.play();
+    lastPlay.textContent = `You played the sound of a ${typeAnimal}`;
+};

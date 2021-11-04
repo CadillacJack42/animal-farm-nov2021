@@ -94,6 +94,7 @@ footer {
 }
 
 .images {
+    cursor: pointer;
     border-radius: 40%;
     margin: 10px 0;
 }
